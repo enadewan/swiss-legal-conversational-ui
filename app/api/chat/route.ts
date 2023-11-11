@@ -8,7 +8,8 @@ import { AIMessage, HumanMessage, SystemMessage } from "langchain/schema";
 import { ChatOllama } from "langchain/chat_models/ollama";
 import { BytesOutputParser } from "langchain/schema/output_parser";
 import { searchVectorDB } from "./vector-db";
-
+import { RetrievalQA } from from "langchain/chains";
+  
 export async function POST(req: Request) {
   const { messages } = (await req.json()) as { messages: Message[] };
 
